@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 try{
-    const conStr="mongodb+srv://admin:1234@cluster0.kbo8y4l.mongodb.net/PostITApp-S1-2526-FS2?retryWrites=true&w=majority&appName=Cluster0";
-    mongoose.connect(conStr);
+    const conStr=  process.env.MONGO_URI;
+
     console.log("Database Connected..")
 }
 catch(error){
